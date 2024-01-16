@@ -1,4 +1,12 @@
 import face_recognition
+#uncomment the below lines if code show the path error
+'''
+import os
+import sys
+sys.path.append(os.getcwd())
+
+'''
+
 import cv2
 import numpy as np
 import numpy
@@ -9,8 +17,8 @@ def FaceAuth():
     ]
     known_face_names = [
     ]
-    for i in listdir("images-folder-path"): #path to the images folder
-        image = face_recognition.load_image_file(f"images-folder-path{i}")  #path to the images folder
+    for i in listdir("image\\"): #path to the images folder
+        image = face_recognition.load_image_file(f"images\\{i}")  #path to the images folder
         face_encoding = face_recognition.face_encodings(image)[0]
         known_face_encodings.append(face_encoding)
         known_face_names.append(i.split(".")[0])
